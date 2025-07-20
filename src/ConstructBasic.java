@@ -56,3 +56,5 @@ public class ConstructBasic {
     }
 }
 //constructor is used to initialize the object
+//at the time of the object creation with new keyword - memory created in heap for obj
+//class name obj; - not create memory
