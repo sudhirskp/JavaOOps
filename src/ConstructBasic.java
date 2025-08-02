@@ -23,7 +23,7 @@ class Mobile {
 
     //copy constructor - only copy not get reference
     Mobile(Mobile m){
-        this.price = m.price;
+        this.price = 88;
         this.Brand = m.Brand;
         this.ram = m.ram;
         this.rom = m.rom;
@@ -42,19 +42,27 @@ class Mobile {
 public class ConstructBasic {
 
     public static void main(String[] args) {
-        Mobile m1 = new Mobile(10000,"Samsung",8,128);
+        Mobile m1 = new Mobile(10000 , "Redmi" , 4 , 64);
         m1.details();
-        Mobile m2 = new Mobile();
-        m2.details();
-        Mobile m3 = new Mobile(m1); //deep copy
-        m3.details();
-        m1.price = 20000;
+       Mobile m2 = new Mobile();
+       m2.details();
+       Mobile m3 = new Mobile(m1); // deep copy
+       m1.price = 20000;
+      System.out.println("by m3 - price : " + m3.price); // should still be 10000
+//
         System.out.println("price : " + m1.price);
         System.out.println("by m3 - price : " + m3.price);
-        m3 = m1; // shallow copy
-        System.out.println("by m3 - price : " + m3.price);
+   m3 = m1; // shallow copy (reference)
+        System.out.println("by m3 - price : " + m3.price); // should be 20000
     }
 }
-//constructor is used to initialize the object
-//at the time of the object creation with new keyword - memory created in heap for obj
-//class name obj; - not create memory
+//Summary
+//Constructors help initialize objects.
+//
+//Java provides a default constructor if none is written.
+//
+//Parameterized constructors allow custom initialization.
+//
+//You can manually write a copy constructor to avoid reference copying.
+//
+//Deep copy vs shallow copy is important when dealing with objects.
